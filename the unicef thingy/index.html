@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            user-select: none;
+            font: 50px Arial;
+            color: rgb(255, 255, 255);
+        }
+
+        button {
+            cursor: pointer;
+        }
+        
+        i {
+            font-style: italic;
+        }
+
+        .creditlink {
+            font-size: 15px;
+            position: relative;
+        }
+
+            .creditlink:link {
+                color: #9696ec;
+            }
+
+            .creditlink:hover {
+                color: #8181ec;
+            }
+
+            .creditlink:visited {
+                color: #9b81b3;
+            }
+
+            .creditlink:link:active, :visited:active {
+                color: #ff9f9f;
+            }
+
+        div.title {
+            transition: 1s ease-out;
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .finishedact {
+            margin: 0px;
+        }
+
+        p.finishedact {
+            font-size: 20px;
+        }
+
+        h1.title, h1.finishedact {
+            font-size: 70px;
+        }
+        
+        h2.title, h2.finishedact {
+            font-size: 40px;
+        }
+
+        button.title, button.finishedact {
+            border: none;
+            margin: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgb(255, 255, 255);
+        }
+
+            button.title:hover, button.finishedact:hover {
+                background-color: rgba(173, 173, 173, 0.66);
+            }
+
+            button.title:active, button.finishedact:active {
+                background-color: rgba(255, 255, 255, 0.85);
+                color: rgb(0, 0, 0);
+            }
+            
+            button.title:disabled, button.finishedact:disabled {
+                background-color: rgba(255, 255, 255, 0.85);
+                color: rgb(0, 0, 0);
+            }
+
+        button.act2 {
+            border: none;
+            margin: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: rgb(0, 0, 0);
+        }
+
+            button.act2:hover {
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+
+            button.act2:active {
+                background-color: rgba(255, 255, 255, 0.7);
+                color: rgb(0, 0, 0);
+            }
+
+        p.act3 {
+            font-size: 20px;
+            margin: 10px;
+            width: max-content;
+        }
+        
+        p.act3help {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            margin: 5px;
+            color: #000000;
+        }
+        
+        img, button {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            background-color: #00000000;
+        }
+
+        p.credit {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #actlocation {
+            position: relative;
+            left: 20px;
+            font-size: 15px;
+        }
+
+        .playertypedtext {
+            font: inherit;
+            color: rgb(247, 248, 160);
+            text-decoration: underline;
+        }
+        
+        .playertext {
+            font: inherit;
+            color: rgba(247, 248, 160, 0.5);
+        }
+
+        .npctext {
+            font: inherit;
+            color: rgb(247, 248, 160);
+        }
+    </style>
+    <title>unicef project</title>
+</head>
+<body oncontextmenu='return false;' style="background-color: #71a06e; cursor: default; overflow: hidden;">
+    <div id="clicktobegin" style="transition: 0.1s linear; cursor: pointer; position: absolute; z-index: 15; background-color: #000000; left: 0px; top: 0px; width: 100%; height: 100%;"><p style="position: relative; text-align: center; top: 50%;">click to begin</p></div>
+    <img id="backgroundimage" src="img/act1/background.png" style="z-index: -10; position: absolute; height: 8044px;">
+    <div class="title" id="titlescreen" style="z-index: 10; top: 0px; left: 0px; background-color: rgb(33, 134, 25);">
+        <div class="title" id="title" style="top: 0%; background-color: rgba(0, 0, 0, 0.75);">
+            <div style="left: 0px; top: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0);">
+                <video src="img/titlescreen/background.mp4" autoplay loop muted style="position: absolute; left: 0px; top: calc(50% - 28.5vw); width: 100%; opacity: 0.5;"></video>
+            </div>
+            <div style="position: absolute; left: 0px; top: 5%; height: calc(45% + 300px); width: 100%; background-color: rgba(0, 0, 0, 0.171);"></div>
+            <h1 style="position: absolute; text-align: center; top: 10%; width: 100%; font-size: 70px; border-bottom: 10px, #fff;">Hopes with Ropes</h1>
+            <button onclick="transtoact('title')" style="position: absolute; top: 50%; left: calc(50% - 250px - 90px)" class='title' id="titlebegin">begin</button>
+            <div style="position: absolute; top: 45%; left: calc(50% + 150px - 90px); height: 300px; width: 500px;">
+                <p class="credit">Sound effects sourced from pixabay.</p>
+                <p class="credit">Simpler sounds generated from Jsfxr.</p>
+                <p class="credit">Tested by friends 
+                    <span style="font: inherit; color: rgb(239, 212, 255);">"etohian ohio blud"</span>,
+                    <span style="font: inherit; color: rgb(252, 255, 209);">Ender</span>,
+                    <span style="font: inherit; color: rgb(212, 255, 248);">[anon]</span>,
+                    <span style="font: inherit; color: rgb(198, 209, 255);">Sio</span>, and
+                    <span style="font: inherit; color: rgb(209, 255, 220);">Tizxc</span>.
+                </p>
+            </div>
+        </div>
+        <div class="title" id="actscreen" style="top: 100%; background-color: rgba(0, 0, 0, 0.65);">
+            <button onclick="transtotitle('actscreen')" class="image" style="position: absolute; top: 50px; left: 50px;"><img style="pointer-events: none;" src="img/titlescreen/back out.png"></button>
+            <p style="font-size: 15px; position: absolute; left: 238px; top: 5px;">Sources used for this act:</p>
+            <div id="hyperlinkscredit" style="position: absolute; left: 238px; top: 20px;">
+                <a class="creditlink" href='https://www.google.ca/maps/place/UNICEF+Canada+-+Calgary+Office/@51.067237,-114.1013492,205m/data=!3m2!1e3!4b1!4m6!3m5!1s0x53716f972575897f:0xa7e0c09dae72dc59!8m2!3d51.067236!4d-114.100592!16s%2Fg%2F1hc3c0g2w?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D'>UNICEF Canada - Calgary Office</a>
+                <a class="creditlink" href='https://www.unicef.ca/en/about-unicefs-fundraising-partners'>About UNICEFS Fundraising Partners</a>
+                <a class="creditlink" href='https://www.unicef.ie/story/a-day-in-the-life-of-a-unicef-fundraiser/'>A day in the life of a UNICEF fundraiser</a>
+                <a class="creditlink" href='https://www.unicef.org/romania/team-unicef-fundraisers'>The team of UNICEF Fundraisers</a>
+                <a class="creditlink" href='https://www.youtube.com/watch?v=Q_hxhneal4U'>[VIDEO] A day in the life of the UNICEF fundraising team</a>
+            </div>
+            <button disabled class="title" onclick="selectact(this.id)" id="act1" style="position: relative; top: 200px; left: 100px;">Act One</button>
+            <button class="title" onclick="selectact(this.id)" id="act2" style="position: relative; top: 200px; left: 150px">Act Two</button>
+            <button class="title" onclick="selectact(this.id)" id="act3" style="position: relative; top: 200px; left: 200px">Act Three</button>
+            <div style="top: 350px; left: 100px; width: calc(90% - 100px); height: calc(90% - 350px); background-color: rgba(0, 0, 0, 0.65); position: absolute;">
+                <h2 id="acttitle" style="font-size: 30px; margin: 20px;">Act One - Determination<span id="actlocation">Calgary, Alberta</span></h2>
+                <i id="actquote" style="font-size: 20px; margin: 10px; position: relative; left: 100px; color: rgb(212, 212, 212); display: inline-block; width: calc(100% - 120px);">"...the positives massively outweigh the negatives."</i>
+                <p id="acttext" style="font-size: 20px; margin: 25px">Become a fundraiser for UNICEF by knocking door to door for donations.</p>
+                <button id="startgame" onclick="begingame(this.id)" class="title" style="position: absolute; bottom: 25px; left: 25px; width: calc(100% - 50px);">start</button>
+            </div>
+        </div>
+        <div class="title" id='finishedact1' style="top: 100%; background-color: rgba(0, 0, 0, 0.75);">
+            <h1 class="finishedact" style="position: relative; top: 100px; text-align: center; border-bottom: 2px solid #fff;">ACT 1 FINISH</h1>
+            <div style="position: absolute; top: 330px; left: calc(50% - 450px);">
+                <h2 class="finishedact">knocking statistics</h2>
+                <p class="finishedact">successful: <span id="successfulknocks"></span></p>
+                <p class="finishedact">non successful: <span id="nonsuccessfulknocks"></span></p>
+                <p class="finishedact">total: <span id="totalknock"></span></p>
+            </div>
+            <div style="position: absolute; top: 330px; left: calc(50% + 131px);">
+                <h2 class="finishedact">speaking statistics</h2>
+                <p class="finishedact">letters typed: <span id="wordstyped"></span></p>
+                <p class="finishedact">times filler word was used (um, uh, etc): <span id="wordsstuttered"></span></p>
+                <p class="finishedact">longest combo: <span id="totalcombo"></span></p>
+            </div>
+            <button class="finishedact" onclick="transtoact('finishedact1')" style="position: relative; top: 550px; margin-left: auto; margin-right: auto; display: block;">Continue</button>
+        </div>
+        <div class="title" id='finishedact2' style="top: 100%; background-color: rgba(0, 0, 0, 0.75);">
+            <h1 class="finishedact" style="position: relative; top: 100px; text-align: center; border-bottom: 2px solid #fff;">ACT 2 FINISH</h1>
+            <div style="position: absolute; top: 330px; left: calc(50% - 450px);">
+                <h2 class="finishedact">MUAC tape statistics</h2>
+                <p class="finishedact">correct: <span id="muaccorrect"></span></p>
+                <p class="finishedact">incorrect: <span id="muacincorrect"></span></p>
+                <p class="finishedact">total: <span id="muactotal"></span></p>
+            </div>
+            <div style="position: absolute; top: 330px; left: calc(50% + 131px);">
+                <h2 class="finishedact">MUAC tape time statistics</h2>
+                <p class="finishedact">fastest time: <span id="muactimefast"></span></p>
+                <p class="finishedact">slowest time: <span id="muactimeslow"></span></p>
+                <p class="finishedact">average time: <span id="muactimeavg"></span></p>
+                <p class="finishedact">total time: <span id="muactimetotal"></span></p>
+            </div>
+            <button class="finishedact" onclick="transtoact('finishedact2')" style="position: relative; top: 550px; margin-left: auto; margin-right: auto; display: block;">Continue</button>
+        </div>
+        <div class="title" id='finishedact3' style="top: 100%; background-color: rgba(0, 0, 0, 0.75);">
+            <h1 class="finishedact" style="position: relative; top: 100px; text-align: center; border-bottom: 2px solid #fff;">ACT 3 FINISH</h1>
+            <div style="position: absolute; top: 330px; left: calc(50% - 450px);">
+                <h2 class="finishedact">pallet statistics</h2>
+                <p class="finishedact">pallets delivered: <span id="palletsdelivered"></span></p>
+                <p class="finishedact">picked up a pallet <span id="palletspicked"></span> times</p>
+                <p class="finishedact">dropped a pallet <span id="palletsdropped"></span> times</p>
+            </div>
+            <div style="position: absolute; top: 330px; left: calc(50% + 131px);">
+                <h2 class="finishedact">control statistics</h2>
+                <p class="finishedact">crashes: <span id="timescrashes"></span></p>
+                <p class="finishedact">times zoomed in: <span id="timeszoomed"></span></p>
+            </div>
+            <button class="finishedact" onclick="transtoact('finishedact3')" style="position: relative; top: 550px; margin-left: auto; margin-right: auto; display: block;">Continue</button>
+        </div>
+    </div>
+    <div class="title" id='actgamestart' style="z-index: 12; top: 100%; background-color: rgb(0, 0, 0); transition: 0.75s ease-out;"></div>
+    
+    <canvas id="canvas" width="0" height="0" style="z-index: 0; position: absolute; left: 0px; top: 0px; zoom: 0.75"></canvas>
+    <canvas id="fixedcanvas" width="0" height="0" style="z-index: 1; position: absolute; left: 0px; top: 0px;"></canvas>
+    
+    <div hidden id="wrapperact1" style="z-index: 2; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+        <p id="act1space" style="margin: 0px; position: absolute; left: 0px; bottom: -0%; width: 100%; height: min-content; background-color: rgba(0, 0, 0, 0.2); text-align: center; font-size: 35px; transition: 0.5s ease-out;">Press [space bar] to knock.</p>
+        <div hidden id="act1keyboardgame" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+            <div style="position: absolute; left: 0px; top: 0px; width: 648px; height: 259px; background-color: rgba(0, 0, 0, 0.4);">
+                <p style="font-size: 30px; margin: 10px; width: calc(100% - 20px); height: calc(100% - 20px);">>>> <span id="playerscripttextread" class="playertypedtext"></span><span id="playerscripttext" class="playertext"></span></p>
+                <p id="textcombo" style="position: absolute; bottom: 0px; font-size: 0px; margin: 15px; color: rgba(255, 255, 255, 0.5);">0</p>
+            </div>
+            <div style="position: absolute; left: 0px; bottom: 0px; width: 648px; height: 259px; background-color: rgba(0, 0, 0, 0.4);">
+                <p style="font-size: 30px; margin: 10px; width: calc(100% - 20px); height: calc(100% - 20px);">>>> <span id="npcresponse" class="npctext"></span></p>
+            </div>
+        </div>
+    </div>
+    <div hidden id="wrapperact2" style="z-index: 2; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+        <p id="act2space" style="margin: 0px; position: absolute; left: 0px; bottom: -0%; width: 100%; height: min-content; background-color: rgba(0, 0, 0, 0.2); text-align: center; font-size: 35px; transition: 0.5s ease-out;">Press [space bar] to interact.</p>
+        <div hidden id="act2job" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+            <div style="position: absolute; left: 0px; bottom: 0px; width: 648px; height: 259px; background-color: rgba(0, 0, 0, 0.4);">
+                <p style="font-size: 30px; margin: 10px; width: calc(100% - 20px); height: calc(100% - 20px);">>>> <span id="npcworkertext" class="npctext"></span></p>
+                <div id='act2choicewrapper' style="position: relative; margin: auto; bottom: 100px; width: max-content; height: 100px;">
+                    <button class="act2" onclick="act2choice('green')">green</button>
+                    <button class="act2" onclick="act2choice('yellow')">yellow</button>
+                    <button class="act2" onclick="act2choice('red')">red</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div hidden id="wrapperact3" style="z-index: 2; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+        <p id="act3space" style="margin: 0px; position: absolute; left: 0px; bottom: -0%; width: 100%; height: min-content; background-color: rgba(0, 0, 0, 0.2); text-align: center; font-size: 35px; transition: 0.5s ease-out;">Press [space bar] to interact.</p>
+        <div id="act3forkdash" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+            <img id="act3thinking" src="img/act3/thinking.png" onclick="dismissthought()" style="position: absolute; right: 0px; height: 70%; top: 0%; opacity: 0.65;"></img>
+            <div style="position: absolute; left: 0px; bottom: 200px; width: 200px; height: 450px; background-color: rgb(128, 128, 128, 0.6);">
+                <p class="act3help" style="text-align: center; border-bottom: 5px solid #000000;">CONTROLS IN ORDER FROM LEAST TO MOST IMPORTANT</p>
+                <p class="act3help" style="text-align: left;">SPACE <span style="text-align: right; font-size: inherit; color: inherit;">exit forklift</span></p>
+                <p class="act3help" style="text-align: left; font-size: 12px;">SHIFT + O + P <span style="text-align: right; font-size: inherit; color: inherit;">toggle engine on/off</span></p>
+                <p class="act3help" style="text-align: left;">R <span style="text-align: right; font-size: inherit; color: inherit;">upshift gear</span></p>
+                <p class="act3help" style="text-align: left;">F <span style="text-align: right; font-size: inherit; color: inherit;">downshift gear</span></p>
+                <p class="act3help" style="text-align: left;">W <span style="text-align: right; font-size: inherit; color: inherit;">gas pedal</span></p>
+                <p class="act3help" style="text-align: left;">S <span style="text-align: right; font-size: inherit; color: inherit;">brakes</span></p>
+                <p class="act3help" style="text-align: left;">A <span style="text-align: right; font-size: inherit; color: inherit;">steer left</span></p>
+                <p class="act3help" style="text-align: left;">D <span style="text-align: right; font-size: inherit; color: inherit;">steer right</span></p>
+                <p class="act3help" style="text-align: left; border-bottom: 5px solid #000000;">Z <span style="text-align: right; font-size: inherit; color: inherit;">pick/drop pallets</span></p>
+                <p class="act3help" style="text-align: left;">T <span style="text-align: right; font-size: inherit; color: inherit;">zoom in</span></p>
+                <p class="act3help" style="text-align: left;">G <span style="text-align: right; font-size: inherit; color: inherit;">zoom out</span></p>
+                <p class="act3help" style="text-align: left; border-bottom: 5px solid #000000;">SHIFT + L <span style="text-align: right; font-size: inherit; color: inherit;">seatbelt</span></p>
+                <p class="act3help" style="text-align: left;">Q <span style="text-align: right; font-size: inherit; color: inherit;">signal left</span></p>
+                <p class="act3help" style="text-align: left;">E <span style="text-align: right; font-size: inherit; color: inherit;">signal right</span></p>
+                <p class="act3help" style="text-align: left;">Q + E <span style="text-align: right; font-size: inherit; color: inherit;">signal hazard</span></p>
+                <p class="act3help" style="text-align: left;">H <span style="text-align: right; font-size: inherit; color: inherit;">use horn</span></p>
+            </div>
+            <div style="position: absolute; left: 0px; bottom: 0px; width: 500px; height: 200px; background-color: rgba(128, 128, 128, 0.8);">
+                <p class="act3">gear: <span id="act3gear" style="font-size: inherit;">NEUTRAL</span></p>
+                <p class="act3">seatbelt on: <span id="act3seat" style="font-size: inherit;">FALSE</span></p>
+                <p class="act3">engine on: <span id="act3eng" style="font-size: inherit;">FALSE</span></p>
+                <div style="position: absolute; left: 0px; bottom: 50px;">
+                    <img id="act3blinkleft" src="img/act3/forklift/dashboard/blinkoff.png" style="margin-right: 10px;">
+                    <img id="act3blinkright" src="img/act3/forklift/dashboard/blinkoff.png" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);">
+                </div>
+                <div style="background-color: #aaaaaa; position: absolute; bottom: 0px; left: 0px; width: 100%; height: 50px;">
+                    <div id="act3speed" style="background-color: rgb(0, 180, 0); position: absolute; left: 0px; top: 0px; width: 0%; height: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="maincode.js"></script>
+</body>
+</html>
